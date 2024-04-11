@@ -1,0 +1,28 @@
+{
+   "browser_action": {
+      "default_icon": {
+         "19": "icon19.png",
+         "38": "icon38.png"
+      },
+      "default_popup": "options.html",
+      "default_title": "Overlay"
+   },
+   "content_scripts": [ {
+      "js": [ "defaults.js", "clock.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": "default-src 'none'; style-src 'self'; script-src 'self';",
+   "description": "Displays a resizeable movable overlay on any webpage.",
+   "icons": {
+      "128": "icon128.png",
+      "48": "icon48.png"
+   },
+   "manifest_version": 2,
+   "name": "Resizeable movable overlay",
+   "options_ui": {
+      "page": "options.html"
+   },
+   "permissions": [ "storage" ],
+   "version": "0.1"
+}
