@@ -27,6 +27,8 @@ resizeHandle.style.right = '0';
 resizeHandle.style.bottom = '0';
 resizeHandle.style.cursor = 'nwse-resize';
 var clickcount=0;
+var x=0;
+var y=0;
 // Function to make the div draggable
 function makeDraggable(element) {
     element.addEventListener('mousedown', function(e) {
@@ -50,8 +52,8 @@ function makeDraggable(element) {
 
     document.addEventListener('mousemove', function(e) {
         if ( isWindow && isDragging) {
-            var x = offsetX + e.clientX - startX;
-            var y = offsetY + e.clientY - startY;
+           	x = offsetX + e.clientX - startX;
+            y = offsetY + e.clientY - startY;
             element.style.left = x + 'px';
             element.style.top = y + 'px';
 			element.style.border = "2px solid white";
@@ -142,7 +144,7 @@ function new_time() {
 		hh = '12';
 	    }
 	}
-	return hh + ':' + mm + apm;
+	return hh + ':' + mm + apm + '\n' + x.toString() + '\n' + y.toString();
 }
 
 function new_date() {
